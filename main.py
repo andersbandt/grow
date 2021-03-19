@@ -2,22 +2,24 @@
 import serial
 import time
 
-# set up serial connection  
+# set up serial connection
+
 ser = serial.Serial(
-    port='/dev/ttyAMA0',
+    port='/dev/ttyUSB0',
     baudrate = 9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
     bytesize=serial.EIGHTBITS,
-    timeout=1
+    timeout=10
 )
 
-serial.flushInput() # flush the input
-serial.flushOutput() # flush the output 
+
+ser.flushInput() # flush the input
+ser.flushOutput() # flush the output
 
 
-def sendChar(char n):
-  ser.write(n)
+def sendChar(char):
+  ser.write(char)
   print("Hello from a function")
 
 def readLine():
