@@ -13,7 +13,6 @@ def relayOff(pin):
 	GPIO.setup(pin, GPIO.OUT)
 	GPIO.output(pin, 0)
 
-
 relayOn(17)
 time.sleep(1)
 relayOff(17)

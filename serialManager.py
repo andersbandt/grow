@@ -20,10 +20,8 @@ ser = serial.Serial(
 
 def sendChar(char):
   	ser.write(char)
-  	print("Hello from a function")
-	time.sleep(.5)
+  	time.sleep(.5)
 
 def readLine():
 	x = ser.readline()
-	print(x)
 	return x

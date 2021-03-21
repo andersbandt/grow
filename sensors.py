@@ -28,9 +28,16 @@ def readEC():
 	EC = serialManager.readLine()
 	print(EC)
 
+def readTDS():
+	serialManager.sendChar('D')
+	time.sleep(.5)
+	TDS = serialManager.readLine()
+	print(TDS)
+
 
 
 readPH()
 readWaterTemp()
 readTemp()
 readEC()
+readTDS()
