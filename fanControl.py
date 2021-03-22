@@ -2,11 +2,22 @@ import relayControl
 import time
 
 
+intake_pin = 4
+outtake_pin = 4
 
-def fanOn(fan_pin):
-	relayControl.relayOn(fan_pin)
 
-def fanOff(fan_pin):
-	relayControl.relayOff(fan_pin)
+def intakeOn():
+	relayControl.relayOn(intake_pin)
+
+def intakeOff():
+	relayControl.relayOff(intake_pin)
+
+def outtakeOn():
+	relayControl.relayOn(outtake_pin)
+
+def outtakeOff()
+	relayControl.relayOff(outtake_pin)
+
+
 
 
