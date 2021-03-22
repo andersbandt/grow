@@ -44,5 +44,8 @@ def controlFans():
 	print("Press 4 to turn outtake fan off")
 	act = int(input("Enter control action please!"))
 
-
+def controlpH():
+	print("Press 1 to add acid")
+	print("Press 2 to add base")
+	act = int(input("Enter control action please!"))
 
