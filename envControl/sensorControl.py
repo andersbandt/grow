@@ -13,40 +13,34 @@ def readPH():
 def readWaterTemp():
         serialBase.sendChar('W')
         time.sleep(.5)
-        waterTemp = serialManager.readLine()
+        waterTemp = serialBase.readLine()
         print("Water temperature: ")
         print(waterTemp)
         return waterTemp
 
 def readTemp():
-        serialManager.sendChar('T')
+        serialBase.sendChar('T')
         time.sleep(.5)
-        temp = serialManager.readLine()
+        temp = serialBase.readLine()
         print("Air temp: ")
         print(temp)
         return temp
 
 def readEC():
-        serialManager.sendChar('E')
+        serialBase.sendChar('E')
         time.sleep(.5)
-        EC = serialManager.readLine()
+        EC = serialBase.readLine()
         print("EC: ")
         print(EC)
         print("ms/cm")
         return EC
 
 def readTDS():
-        serialManager.sendChar('D')
+        serialBase.sendChar('D')
         time.sleep(.5)
-        TDS = serialManager.readLine()
+        TDS = serialBase.readLine()
         print("TDS: ")
         print(TDS)
         print("ppm")
         return TDS
 
-
-readPH()
-readWaterTemp()
-readTemp()
-readEC()
-readTDS()

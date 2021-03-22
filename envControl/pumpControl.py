@@ -1,4 +1,4 @@
-import relayControl
+import relayBase
 import time
 
 pump1_pin = 1
@@ -13,15 +13,15 @@ mL_sec = .03 # flow rate of pumps in mL/sec
 # this function pumps a certain amount (in mL) of fluid at a certain pump
 def pumpFluid(pump, amount):
 	if pump == 'acid':
-		relayControl.relayOn(pump1_pin)
+		relayBase.relayOn(pump1_pin)
 	elif pump == 'base':
-		relayControl.relayOn(pump2_pin)
+		relayBase.relayOn(pump2_pin)
 	elif pump == '284':
-		relayControl.relayOn(pump3_pin)
+		relayBase.relayOn(pump3_pin)
 	elif pump == '644':
-		relayControl.relayOn(pump4_pin)
+		relayBase.relayOn(pump4_pin)
 	elif pump == '057':
-		relayControl.relayOn(pump5_pin)
+		relayBase.relayOn(pump5_pin)
 
 
 
