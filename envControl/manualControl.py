@@ -2,12 +2,12 @@ import lightControl
 import fanControl
 import pHControl
 import pumpControl
-
+import airControl
+import sensorControl
 
 
 if __name__ == __main__:
 	main()
-
 
 # main method to run to gather user input
 def main():
@@ -16,7 +16,6 @@ def main():
 	print("Press 3 to control pH")
 	print("Press 4 to control pumps")
 	are = int(input("Enter control area number!"))
-
 
 	if are == 1:
 		controlLights()
@@ -28,19 +27,17 @@ def main():
 		controlPumps()
 
 
-
-
 def controlLights():
 	print("Press 1 to turn light on")
 	print("Press 2 to turn light off")
 	act = int(input("Enter control action please!"))
-	
+
 	if act == 1:
 		lightControl.lightOn()
 	elif act == 2:
 		lightControl.lightOff()
 
-		
+
 # function to control fans
 def controlFans():
 	print("Press 1 to turn intake fan on")
@@ -48,7 +45,7 @@ def controlFans():
 	print("Press 3 to turn outtake fan on")
 	print("Press 4 to turn outtake fan off")
 	act = int(input("Enter control action please!"))
-	
+
 	if act == 1:
 		fanControl.intakeOn()
 	elif act == 2:
@@ -64,12 +61,12 @@ def controlpH():
 	print("Press 1 to add acid")
 	print("Press 2 to add base")
 	act = int(input("Enter control action please!"))
-	
+
 	if act == 1:
 		pHControl.addAcid()
 	elif act == 2:
 		pHControl.addBase()
-		
+
 # function to control nutrients
 def controlNutrients():
 	print("Press 1 to add 284")

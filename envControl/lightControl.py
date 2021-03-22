@@ -1,7 +1,4 @@
-import relayControl
-import time
-
-
+import relayBase
 
 
 def lightOn():

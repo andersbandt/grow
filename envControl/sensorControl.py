@@ -1,17 +1,17 @@
-import serialManager
+import serialBase
 import time
 
 
 def readPH():
-        serialManager.sendChar('P')
+        serialBase.sendChar('P')
         time.sleep(.5)
-        pH = serialManager.readLine()
+        pH = serialBase.readLine()
         print("pH: ")
         print(pH)
         return pH
 
 def readWaterTemp():
-        serialManager.sendChar('W')
+        serialBase.sendChar('W')
         time.sleep(.5)
         waterTemp = serialManager.readLine()
         print("Water temperature: ")
