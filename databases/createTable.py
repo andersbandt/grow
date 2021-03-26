@@ -1,9 +1,13 @@
-import sqlite3 as lite
+import sqlite3
 
-con = lite.connect('readings.db')
+conn = sqlite3.connect('data.db')
+print("Opened database successfully")
 
-with con:
+conn.execute('''CREATE TABLE TEMPERATURE
+		(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+		DATETIME     TEXT   NOT NULL,
+		VALUE        INT    NOT NULL);''')
 
-	cur = con.cursor()
+print("Table created successfuly")
 
-	cur.execute("CREATE TABLE temp(id INT, value INT, time DATETIME)")
+conn.close()
