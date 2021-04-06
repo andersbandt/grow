@@ -25,7 +25,7 @@ def main():
 	dt_string = now.strftime("%d//%m/%Y %H:%M:%S")
 	with con:
 		cur = con.cursor()
-		cur.execute("INSERT INTO pH VALUES(now, pH)")
+		cur.execute("INSERT INTO pH VALUES(dt_string, pH)")
 		print("pH value of ", pH, " recorded at ", dt_string, " inserted")
 	if pH > upper_range:
 		addAcid(pH)
