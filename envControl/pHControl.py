@@ -33,7 +33,6 @@ def main():
 		addBase(pH)
 
 
-
 def addBase(pH):
 	dif = pH -  ideal_pH
 	amount = mL_per_gallon * tank_size
@@ -45,4 +44,7 @@ def addAcid(pH):
 	amount = mL_per_gallon * tank_size
 	pumpControl.pumpFluid('acid', amount)
 	print("Pumped ", amount, "of acid to the tank")
+	
+def calibratePH():
+	
 
