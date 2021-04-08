@@ -4,6 +4,7 @@ import pHControl
 import pumpControl
 import airControl
 import sensorControl
+import relayBase
 
 
 # main method to run to gather user input
@@ -22,11 +23,12 @@ def main():
 		elif are == 2:
 			controlFans()
 		elif are == 3:
-			controlPH()
+			controlpH()
 		elif are == 4:
 			controlPumps()
 		elif are == 9:
 			quit = True
+			
 
 
 # function to control lights
@@ -64,30 +66,39 @@ def controlpH():
 	print("Press 1 to add acid")
 	print("Press 2 to add base")
 	act = int(input("Enter control action please!"))
-
+	quit = False
 	if act == 1:
 		pHControl.addAcid()
+		controlpH()
 	elif act == 2:
 		pHControl.addBase()
+	elif act == 9:
+		main()
 
 
 
 # function to manually control all the pump relays
 def controlPumps():
 	print("Press 1 to turn on pump 1")
-	print("Press 2 to turn on pump 2")
-	print("Press 3 to turn on pump 3")
-	print("Press 4 to turn on pump 4")
-	print("Press 5 to turn on pump 5")
-	print("Press 6 to turn on main water pump")
-	print("Press 7 to turn on air pump")
-
+	print("Press 2 to turn off pump 1")
+	print("Press 3 to turn on pump 2")
+	print("Press 4 to turn off pump 2")
+	print("Press 5 to turn on pump 3")
+	print("Press 6 to turn off pump 3")
+	print("Press 7 to turn on pump 4")
+	print("Press 8 to turn off pump 4")
+	print("Press 9 to turn on pump 5")
+	print("Press 10 to turn off pump 5")
+	print("Press 11 to quit")
 	act = int(input("Enter control action please"))
-
-	if act == 6:
-		pumpControl.mainOn()
-	if act == 7:
-		airControl.pumpOn()
+	if act == 9:
+		relayBase.relayOn(26)
+		controlPumps()
+	elif act == 10:
+		relayBase.relayOff(26)
+		controlPumps()
+	elif act == 11:
+		main()
 
 
 # function to control nutrients

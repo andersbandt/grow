@@ -1,14 +1,24 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask
+#import flash
+#import redirect
+#import render_template
+#import request
+#import session
+#import abort
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html',**locals()) # locals is the variables I am passing in
-
-@app.route('/')
+def hello_world():
+	return 'Hello World!'
 
 
+#@app.route('/')
+#def index():
+#    return render_template('index.html',**locals()) # locas are the variables I pass
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+
+
+
+if __name__ == '__main__':
+	app.debug = True
+	app.run(host='0.0.0.0')

@@ -11,7 +11,7 @@ upper_range = 6.0
 
 mL_per_gallon = 15 # recommended addition of solution per gallon
 pH_slope = .4 # pH increase for every mL drop/gallon of water
-tank_size = 10 # tank size in gallons
+tank_size = 9 # tank size in gallons
 
 
 if __name__ == "__main__":
@@ -33,18 +33,15 @@ def main():
 		addBase(pH)
 
 
-def addBase(pH):
-	dif = pH -  ideal_pH
-	amount = mL_per_gallon * tank_size
+def addBase():
+	amount = 1
 	pumpControl.pumpFluid('base', amount)
 	print("Pumped ", amount, "of base to the tank")
 
-def addAcid(pH):
-	dif = pH - ideal_pH
-	amount = mL_per_gallon * tank_size
+def addAcid():
+	amount = 1
 	pumpControl.pumpFluid('acid', amount)
 	print("Pumped ", amount, "of acid to the tank")
-	
-def calibratePH():
-	
 
+def calibratePH():
+	return True
