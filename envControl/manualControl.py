@@ -15,6 +15,7 @@ def main():
 		print("Press 2 to control fans")
 		print("Press 3 to control pH")
 		print("Press 4 to control pumps")
+		print("Press 5 to control sensors")
 		print("Press 9 to quit")
 		are = int(input("Enter control area number!"))
 
@@ -26,10 +27,10 @@ def main():
 			controlpH()
 		elif are == 4:
 			controlPumps()
+		elif are == 5:
+			controlSensors()
 		elif are == 9:
 			quit = True
-			
-
 
 # function to control lights
 def controlLights():
@@ -66,6 +67,7 @@ def controlpH():
 	print("Press 1 to add acid")
 	print("Press 2 to add base")
 	act = int(input("Enter control action please!"))
+
 	quit = False
 	if act == 1:
 		pHControl.addAcid()
@@ -74,7 +76,6 @@ def controlpH():
 		pHControl.addBase()
 	elif act == 9:
 		main()
-
 
 
 # function to manually control all the pump relays
@@ -91,6 +92,7 @@ def controlPumps():
 	print("Press 10 to turn off pump 5")
 	print("Press 11 to quit")
 	act = int(input("Enter control action please"))
+
 	if act == 9:
 		relayBase.relayOn(26)
 		controlPumps()
@@ -100,6 +102,31 @@ def controlPumps():
 	elif act == 11:
 		main()
 
+
+# function to control sensors
+def controlSensors():
+	print("Press 1 to read pH")
+	print("Press 2 to read EC")
+	print("Press 3 to read TDS")
+	print("Press 4 to read air temperature")
+	print("Press 9 to quit")
+
+	act = int(input("Enter control action please!"))
+
+	if act == 1:
+		sensorControl.readpH()
+		controlSensors()
+	elif act == 2:
+		sensorControl.readEC()
+		controlSensors()
+	elif act == 3:
+		sensorControl.readTDS()
+		controlSensors()
+	elif act == 4:
+		sensorControl.readTemp()
+		controlSensors()
+	elif act == 9:
+		main()
 
 # function to control nutrients
 def controlNutrients():

@@ -2,7 +2,7 @@ import serialBase
 import time
 
 
-def readPH():
+def readpH():
         serialBase.sendChar('P')
         time.sleep(.5)
         pH = serialBase.readLine()
