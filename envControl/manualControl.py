@@ -1,10 +1,10 @@
-import lightControl
-import fanControl
-import pHControl
-import pumpControl
-import airControl
-import sensorControl
-import relayBase
+import control.lightControl
+import control.fanControl
+import control.pHControl
+import control.pumpControl
+import control.airControl
+import control.sensorControl
+import control.relayBase
 
 
 # main method to run to gather user input
