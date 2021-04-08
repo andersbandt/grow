@@ -1,7 +1,0 @@
-import manualControl
-
-
-
-
-manualControl.main()
-
