@@ -1,6 +1,4 @@
-import sensorControl
-import relayBase
-import pumpControl
+import control
 from datetime import datetime
 import sqlite3 as lite
 

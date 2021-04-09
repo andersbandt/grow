@@ -19,7 +19,7 @@ ser = serial.Serial(
 
 
 def sendChar(char):
-  	ser.write(char)
+  	ser.write(char.encode())
   	time.sleep(.5)
 
 def readLine():

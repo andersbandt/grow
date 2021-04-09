@@ -6,7 +6,7 @@ print("Opened database successfully")
 conn.execute('''CREATE TABLE CALIBRATION
 		(ID INTEGER PRIMARY KEY AUTOINCREMENT,
 		TYPE     TEXT   NOT NULL,
-		VALUE        INT    NOT NULL);''')
+		VALUE        FLOAT    NOT NULL);''')
 
 print("Table created successfuly")
 

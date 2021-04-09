@@ -66,6 +66,7 @@ def controlFans():
 def controlpH():
 	print("Press 1 to add acid")
 	print("Press 2 to add base")
+	print("Press 9 to quit")
 	act = int(input("Enter control action please!"))
 
 	quit = False
@@ -126,7 +127,7 @@ def controlSensors():
 		sensorControl.readTemp()
 		controlSensors()
 	elif act == 9:
-		main()
+		return
 
 # function to control nutrients
 def controlNutrients():
