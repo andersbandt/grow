@@ -1,11 +1,11 @@
 import sqlite3
 
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('parameters.db')
 print("Opened database successfully")
 
-conn.execute('''CREATE TABLE TEMPERATURE
+conn.execute('''CREATE TABLE CALIBRATION
 		(ID INTEGER PRIMARY KEY AUTOINCREMENT,
-		DATETIME     TEXT   NOT NULL,
+		TYPE     TEXT   NOT NULL,
 		VALUE        INT    NOT NULL);''')
 
 print("Table created successfuly")

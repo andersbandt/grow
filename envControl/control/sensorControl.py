@@ -3,9 +3,10 @@ import time
 
 
 def readpH():
-        serialBase.sendChar('P')
-        time.sleep(.5)
-        pH = serialBase.readLine()
+	serialBase.sendChar('P')
+	time.sleep(.5)
+        pH_voltage = float(serialBase.readLine()[:4]) # get rid of the new line carriage '\r\n' and convert to float
+	pH = 7 - (2.5 - pH_voltage)*m
         print("pH: ")
         print(pH)
         return pH
