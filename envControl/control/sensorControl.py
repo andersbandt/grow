@@ -2,15 +2,33 @@ import control.serialBase as serialBase
 import control.dataBase as dataBase
 import time
 
+# function to read analog input pH and convert to pH
 def readpH():
 	m = dataBase.getParameter('pHslope')
 	serialBase.sendChar('P')
 	time.sleep(.5)
 	pH_voltage = float(serialBase.readLine()[:4]) # get rid of the new line carriage '\r\n' and convert to float
-	pH = round(7 - (2.5 - pH_voltage)*m, 2)
+	pH = round(7 - (3.26 - pH_voltage)*m, 2)
+	print("Using an m value of ", m)
 	print("pH: ")
 	print(pH)
 	return pH
+
+# function to read the raw pH voltage
+def readpHVolts():
+	serialBase.sendChar('P')
+	time.sleep(.5)
+	pH_voltage = float(serialBase.readLine()[:4])
+	print(pH_voltage)
+	return pH_voltage
+
+# function to display the pH voltage over and over
+def adjustpHOffset():
+	while True:
+		serialBase.sendChar('P')
+		time.sleep(.5)
+		pH_voltage = float(serialBase.readLine()[:4])
+		print(pH_voltage)
 
 def readWaterTemp():
 	serialBase.sendChar('W')
@@ -23,7 +41,10 @@ def readWaterTemp():
 def readTemp():
 	serialBase.sendChar('T')
 	time.sleep(.5)
-	temp = float(serialBase.readLine()[:5].decode) # extract temp voltage
+	temp = serialBase.readLine()[:3] # extract temp voltage
+	temp = temp.decode()
+	temp = float(temp)
+	temp = .1205*temp
 	print("Air temp: ")
 	print(temp)
 	return temp

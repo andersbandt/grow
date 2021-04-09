@@ -5,6 +5,7 @@ import control.pumpControl as pumpControl
 import control.airControl as airControl
 import control.sensorControl as sensorControl
 import control.relayBase as relayBase
+import tests.pHcalibrate as pHcalibrate
 
 
 # main method to run to gather user input
@@ -15,7 +16,7 @@ def main():
 		print("Press 2 to control fans")
 		print("Press 3 to control pH")
 		print("Press 4 to control pumps")
-		print("Press 5 to control sensors")
+		print("Press 5 to read sensor input")
 		print("Press 9 to quit")
 		are = int(input("Enter control area number!"))
 
@@ -66,6 +67,8 @@ def controlFans():
 def controlpH():
 	print("Press 1 to add acid")
 	print("Press 2 to add base")
+	print("Press 3 to calibrate pH meter")
+	print("Press 4 to adjust pH offset voltage")
 	print("Press 9 to quit")
 	act = int(input("Enter control action please!"))
 
@@ -75,6 +78,10 @@ def controlpH():
 		controlpH()
 	elif act == 2:
 		pHControl.addBase()
+	elif act == 3:
+		pHcalibrate.calibrate()
+	elif act == 4:
+		sensorControl.adjustpHOffset()
 	elif act == 9:
 		main()
 
