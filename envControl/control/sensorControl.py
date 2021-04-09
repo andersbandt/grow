@@ -1,6 +1,6 @@
 import serialBase
 import time
-
+from .databases import getParameter
 
 def readpH():
 	serialBase.sendChar('P')

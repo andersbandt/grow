@@ -1,10 +1,10 @@
 import unittest
-from ..control.sensorControl import sensorControl
+from control import sensorControl
 import sqlite3
 
 
 def main():
-	conn = sqlite3.connect('home/pi/grow/databases/parameters.db')
+	conn = sqlite3.connect('../databases/parameters.db')
 
 
 	m = -6.95
