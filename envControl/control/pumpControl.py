@@ -1,4 +1,4 @@
-import relayBase
+import control.relayBase
 import time
 
 pump1_pin = 5 # tied to
