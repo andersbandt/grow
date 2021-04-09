@@ -1,4 +1,4 @@
-import relayBase
+import control.relayBase
 
 
 def lightOn():
