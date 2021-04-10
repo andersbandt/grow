@@ -54,16 +54,17 @@ def readTemp():
 def readEC():
 	serialBase.sendChar('E')
 	time.sleep(.5)
-	EC = serialBase.readLine()
+	EC = float(serialBase.readLine()[:3])
 	print("EC: ")
 	print(EC)
 	print("ms/cm")
 	return EC
 
+# function to read TDS
 def readTDS():
 	serialBase.sendChar('D')
 	time.sleep(.5)
-	TDS = serialBase.readLine()
+	TDS = float(serialBase.readLine()[:5])
 	print("TDS: ")
 	print(TDS)
 	print("ppm")

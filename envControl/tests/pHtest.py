@@ -33,7 +33,7 @@ def main():
 				writer.writerow(["TDS", TDS, cur_time])
 				EC = sensorControl.readEC()
 				cur_time = time.time() - start_time
-				writer.writerow(["EC", TDS, cur_time])
+				writer.writerow(["EC", EC, cur_time])
 				time.sleep(pH_interval)
 				i = i + 1
 
