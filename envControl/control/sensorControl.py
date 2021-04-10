@@ -9,7 +9,6 @@ def readpH():
 	time.sleep(.5)
 	pH_voltage = float(serialBase.readLine()[:4]) # get rid of the new line carriage '\r\n' and convert to float
 	pH = round(7 - (3.26 - pH_voltage)*m, 2)
-	print("Using an m value of ", m)
 	print("pH: ")
 	print(pH)
 	return pH
