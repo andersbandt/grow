@@ -106,7 +106,13 @@ def controlPumps():
 	print("Press 11 to quit")
 	act = int(input("Enter control action please"))
 
-	if act == 9:
+	if act == 7:
+		relayBase.relayOn(19)
+		controlPumps()
+	elif act == 8:
+		relayBase.relayOff(19)
+		controlPumps()
+	elif act == 9:
 		relayBase.relayOn(26)
 		controlPumps()
 	elif act == 10:
