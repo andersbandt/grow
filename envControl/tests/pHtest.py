@@ -21,13 +21,19 @@ def main():
 	while cur_time < (test_time):
 			pumpControl.pumpFluid('acid', pumpSeconds)
 			cur_time = time.time() - start_time
-			writer.writerow(["Pump", pumpSeconds, cur_time ])
+			writer.writerow(["Acid", pumpSeconds, cur_time ])
 
 			i = 0
 			for i in range(pH_readings):
 				pH = sensorControl.readpH()
 				cur_time = time.time() - start_time
 				writer.writerow(["pH", pH, cur_time])
+				TDS = sensorControl.readTDS()
+				cur_time = time.time() - start_time
+				writer.writerow(["TDS", TDS, cur_time])
+				EC = sensorControl.readEC()
+				cur_time = time.time() - start_time
+				writer.writerow(["EC", TDS, cur_time])
 				time.sleep(pH_interval)
 				i = i + 1
 

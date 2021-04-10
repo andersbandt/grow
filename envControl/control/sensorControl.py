@@ -29,6 +29,7 @@ def adjustpHOffset():
 		pH_voltage = float(serialBase.readLine()[:4])
 		print(pH_voltage)
 
+# function to return the water temperature of the tank
 def readWaterTemp():
 	serialBase.sendChar('W')
 	time.sleep(.5)
@@ -37,6 +38,7 @@ def readWaterTemp():
 	print(waterTemp)
 	return waterTemp
 
+# function to read air temperature of the cabinet
 def readTemp():
 	serialBase.sendChar('T')
 	time.sleep(.5)
@@ -48,6 +50,7 @@ def readTemp():
 	print(temp)
 	return temp
 
+# function to read electrical conductivity of the water
 def readEC():
 	serialBase.sendChar('E')
 	time.sleep(.5)
