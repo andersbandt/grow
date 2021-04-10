@@ -4,10 +4,10 @@ from control import sensorControl
 import time
 import csv
 
-dosing_interval = 1 # amount of time between acid/base additions in minutes
-pumpSeconds = 20 # amount of seconds to run the pump each dosing interval
+dosing_interval = 5 # amount of time between acid/base additions in minutes
+pumpSeconds = 30 # amount of seconds to run the pump each dosing interval
 pH_interval = 15 # interval between pH readings in seconds
-test_time = 5*60 # total testing time in seconds
+test_time = 30*60 # total testing time in seconds
 pH_readings = int(dosing_interval*60/pH_interval) # number of pH readings between acid/base addition
 
 def main():
