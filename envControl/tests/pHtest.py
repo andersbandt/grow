@@ -14,7 +14,7 @@ def main():
 	start_time = time.time()
 	cur_time = 0
 	print("BTW... pH_readings is ", pH_readings)
-	doc = open('pHtest_data.txt', 'w')
+	doc = open('pHtest_data.csv', 'w')
 	writer = csv.writer(doc)
 	while cur_time < (start_time + test_time):
 			pumpControl.pumpFluid('acid', pumpSeconds)
