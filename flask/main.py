@@ -7,15 +7,18 @@ from flask import session
 from flask import abort
 
 app = Flask(__name__)
+
+
 @app.route('/')
-
-#def main():
-#	return '<h1>Hello World!</h1>'
-
-
-
 def index():
     return render_template('index.html',**locals()) # locals are the variables I pass
+
+@app.route('/pump')
+def pumpControl():
+	return True
+
+
+
 
 
 if __name__ == '__main__':
