@@ -1,22 +1,21 @@
 from flask import Flask
-#import flash
-#import redirect
-#import render_template
-#import request
-#import session
-#import abort
+from flask import flash
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask import session
+from flask import abort
 
 app = Flask(__name__)
+@app.route('/')
 
-def hello_world():
-	return 'Hello World!'
-
-
-#@app.route('/')
-#def index():
-#    return render_template('index.html',**locals()) # locas are the variables I pass
+#def main():
+#	return '<h1>Hello World!</h1>'
 
 
+
+def index():
+    return render_template('index.html',**locals()) # locals are the variables I pass
 
 
 if __name__ == '__main__':
