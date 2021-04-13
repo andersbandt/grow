@@ -1,0 +1,355 @@
+
+/* FONTS */
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+
+/* GENERAL */
+
+html {
+  background-color: #FFFFE9;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+}
+
+body {
+  height:100%;
+}
+
+
+/* HEADINGS */ 
+
+h1 {
+  font-size: 75px;
+  font-family: "Papryus", sans-serif;
+}
+
+h2 {
+  font-size: 55px;
+  color:#3f3f3f;
+  margin-left: 100px;
+}
+
+h3 {
+  color:#3f3f3f;
+  font-size: 37px;
+  margin-right: 34%;
+  margin-left: 74px;
+}
+
+
+/* WEBSITE AND ARTICLE HEADINGS*/ 
+
+#heading {
+  margin-left:110px;
+  margin-top: 25px;
+  line-height: 0em;
+  color:#3f3f3f;
+}
+
+.article_heading {
+	margin: 0;
+	padding: 20px;
+}
+
+#date {
+  font-size: 25px;
+  margin-left: 150px;
+}
+
+
+/* ARTICLE BODY STYLING */
+
+article {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* TEXT STYLING */ 
+
+.bodytext {
+  color: #3f3f3f;
+  font-size: 22.5px;
+  /*
+  margin-left:75px;
+  line-height:125%;
+  margin-right:34%;
+  margin-bottom: 40px;
+  */
+  font-family: 'Lato', sans-serif;
+  text-indent: 35px;
+}
+
+
+/* LINE SEPERATOR BETWEEN TOPICS */
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+
+
+/* TABLES */
+
+table {
+  border:1px solid black;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+
+.partsList {
+	background-color: #CC4F32;
+	border: 1px #9B9DB3;
+  margin-left: 100px;
+}
+
+.partsList td, th {
+	border: 1px solid #BFD4E6;
+	padding: .5rem;
+	text-align: center;
+}
+
+.pictureTable {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+/* IMAGE STYLING */
+
+.image {
+	text-align: center;
+	padding: 10px;
+}
+
+
+/* FOOTER */ 
+
+#footer {
+   position:relative;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+   background:#f96e5b;
+   text-align:center;
+   font-size: 16px;
+}
+
+
+/* TABLE OF CONTENTS */
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+
+.toc_title {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+}
+
+.toc_list {
+	font-size: 22px;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+}
+
+
+/* NAVIGATION BAR STYLING SECTION */
+
+#navbar {
+  color:black;
+  text-align:center;
+}
+
+#cssmenu {
+  background: #f96e5b;
+  width: auto;
+}
+
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+ 
+
+ line-height: 1;
+  display: block;
+  zoom: 1;
+}
+
+#cssmenu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#cssmenu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+#cssmenu.align-right ul li {
+  float: right;
+}
+
+#cssmenu.align-center ul {
+  text-align: center;
+}
+
+#cssmenu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+}
+
+#cssmenu ul li a:hover {
+color: #333333;
+}
+
+#cssmenu ul li a:hover:before {
+  width: 
+
+100%;
+}
+#cssmenu ul li a:after {
+  content: "";
+  display: 
+
+block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  
+height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: 
+
+.5;
+}
+
+#cssmenu ul li a:before {
+  content: "";
+  display: 
+
+block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-
+
+transition: width .25s;
+  -moz-transition: width .25s;
+  -
+
+ms-transition: width .25s;
+  -o-transition: width .25s;
+  
+transition: width .25s;
+}
+#cssmenu ul li.last > a:after,
+#cssmenu ul li:last-child > a:after {
+  display: none;
+}
+#cssmenu ul li.active a {
+  color: #333333;
+}
+#cssmenu ul 
+
+li.active a:before {
+  width: 100%;
+}
+#cssmenu.align-right 
+
+li.last > a:after,
+#cssmenu.align-right li:last-child > 
+
+a:after {
+  display: block;
+}
+#cssmenu.align-right 
+
+li:first-child a:after {
+  display: none;
+}
+@media screen 
+
+and (max-width: 768px) {
+  #cssmenu ul li {
+    float: 
+
+none;
+    display: block;
+  }
+  #cssmenu ul li a {
+    width: 
+
+100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-
+
+sizing: border-box;
+    box-sizing: border-box;
+    
+
+border-bottom: 1px solid #fb998c;
+  }
+  #cssmenu ul li.last 
+
+> a,
+  #cssmenu ul li:last-child > a {
+    border: 0;
+  }
+  
+
+#cssmenu ul li a:after {
+    display: none;
+  }
+  #cssmenu 
+
+ul li a:before {
+    display: none;
+  }
+}
+
+
+
+

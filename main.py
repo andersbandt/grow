@@ -1,6 +1,6 @@
 import envControl.control as control
 import envControl.tests as tests
-import grow_flask.createApp as grow_flask
+import grow_flask.app as grow_flask
 
 
 
