@@ -1,4 +1,4 @@
-import control.relayBase as relayBase
+import envControl.control.relayBase as relayBase
 import time
 
 pump1_pin = 5 # tied to
@@ -14,6 +14,7 @@ def pumpFluid(pump, seconds):
 		relayBase.relayOn(pump5_pin)
 		time.sleep(seconds)
 		relayBase.relayOff(pump5_pin)
+		print("Pumped some acid")
 	elif pump == 'base':
 		relayBase.relayOn(pump4_pin)
 		time.sleep(seconds)
