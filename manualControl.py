@@ -1,10 +1,10 @@
-import control.lightControl as lightControl
-import control.fanControl as fanControl
-import control.pHControl as pHControl
-import control.pumpControl as pumpControl
-import control.airControl as airControl
-import control.sensorControl as sensorControl
-import control.relayBase as relayBase
+import envControl.control.lightControl as lightControl
+import envControl.control.fanControl as fanControl
+import envControl.control.pHControl as pHControl
+import envControl.control.pumpControl as pumpControl
+import envControl.control.airControl as airControl
+import envControl.control.sensorControl as sensorControl
+import envControl.control.relayBase as relayBase
 
 import tests.pHcalibrate as pHcalibrate
 import tests.pHtest as pHtest
