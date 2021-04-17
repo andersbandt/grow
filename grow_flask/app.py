@@ -10,8 +10,6 @@ from grow_flask import routes
 
 #import envControl.control.pumpControl as pumpControl
 
-
-
 def createApp():
 	app = Flask(__name__)
 	register_blueprints(app)

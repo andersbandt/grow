@@ -21,6 +21,20 @@ body {
 }
 
 
+
+.controlArea {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+}
+
+.controlButton {
+  font-size: 25px;
+  color: #006400;
+}
+
+
+
 /* HEADINGS */ 
 
 h1 {
@@ -42,18 +56,11 @@ h3 {
 }
 
 
-/* WEBSITE AND ARTICLE HEADINGS*/ 
-
 #heading {
   margin-left:110px;
   margin-top: 25px;
   line-height: 0em;
   color:#3f3f3f;
-}
-
-.article_heading {
-	margin: 0;
-	padding: 20px;
 }
 
 #date {
