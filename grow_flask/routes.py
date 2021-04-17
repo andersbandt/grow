@@ -7,10 +7,9 @@ from flask import session
 from flask import abort
 from flask.blueprints import Blueprint
 
-import envControl.control as Control
+from envControl.control import airControl
 
 blueprint = Blueprint('routes', __name__, static_folder='static', template_folder='/templates')
-
 
 @blueprint.route('/')
 def home():
@@ -29,11 +28,11 @@ def control():
 @blueprint.route('/airOn')
 def airOn():
 	print("The air pump should be on!")
-	Control.airControl.airOn()
+	airControl.airOn()
 
 @blueprint.route('/airOff')
 def airOff():
 	print("The air pump should be off!")
-	Control.airControl.airOff()
+	airControl.airOff()
 
 
