@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hidden Hydroponics Management</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css">
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script type="text/javascript"> 
+      $(function() { $("#mybutton").click(function (event) { 
+        $.getJSON('/firstFunction', { }, function(data) { }); 
+        return false;
+      }); 
+    }); 
+    </script> 
+
+
+</head>
+<body>
+
+<h1>Hidden Hydroponics</h1>
+
+
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="index.html">Home</a>
+    </li>
+    <li><a href="automate.html">Configure Automation</a>
+    </li>
+    <li><a href="data.html">Data Management</a>
+    </li>
+    <li><a href="control.html">Manual Control</a>
+  </ul>
+</div>
+
+
+<div class="controlArea">
+ <form method="POST">
+  <button class="controlButton" id="mybutton" type="submit">Test 1n</button>
+  <button id="mybutton" type="submit">Air Pump Off</button>
+  <button id="mybutton" type="submit">Water Pump On</button>
+  <button id="mybutton" type="submit">Water Pump Off</button>
+</form>
+</div>
+ 
+<div class="controlArea">
+ <form method="POST">
+  <button class="controlButton"  id="mybutton" type="submit">Intake Fan On</button>
+  <button class="controlButton"  id="mybutton" type="submit">Intake Fan Off</button>
+  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan On</button>
+  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan Off</button>
+</form>
+</div>
+
+<div class="controlArea">
+ <form method="POST">
+  <button class="controlButton"  id="mybutton" type="submit">Acid Pump On</button>
+  <button class="controlButton"  id="mybutton" type="submit">Acid Pump Off</button>
+  <button class="controlButton"  id="mybutton" type="submit">Base Pump On</button>
+  <button class="controlButton"  id="mybutton" type="submit">Base Pump Off</button>
+</form>
+</div>
+
+
+<table class="partsList">
+  <tr>
+    <th>Lights</th>
+  </tr>
+  <tr>
+    <td>Lights on</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+
