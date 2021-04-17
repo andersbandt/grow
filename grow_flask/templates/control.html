@@ -14,6 +14,17 @@
         return false;
       }); 
     }); 
+
+	$(function() { $("#airOn").click(function (event) { 
+        $.getJSON('/airOn', { }, function(data) { }); 
+        return false;
+      }); 
+		      
+	$(function() { $("#airOff").click(function (event) { 
+        $.getJSON('/airOff', { }, function(data) { }); 
+        return false;
+      }); 
+    }); 
     </script> 
 
 
@@ -38,29 +49,29 @@
 
 <div class="controlArea">
  <form method="POST">
-  <button class="controlButton" id="mybutton" type="submit">Test 1n</button>
-	<button id="airOn" type="submit">Air Pump Off</button>
-  <button id="mybutton" id ="airOff" type="submit">Air Pump Off</button>
-  <button id="mybutton" type="submit">Water Pump On</button>
-  <button id="mybutton" type="submit">Water Pump Off</button>
+ 	<button class="controlButton" id="mybutton" type="submit">Test 1n</button>
+	<button class="controlButton" id="airOn" type="submit">Air Pump On</button>
+ 	<button class="controlButton" id="airOff" type="submit">Air Pump Off</button>
+ 	<button id="my" type="submit">Water Pump On</button>
+	<button id="my" type="submit">Water Pump Off</button>
 </form>
 </div>
  
 <div class="controlArea">
  <form method="POST">
-  <button class="controlButton"  id="mybutton" type="submit">Intake Fan On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Intake Fan Off</button>
-  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan Off</button>
+  <button class="controlButton"  id="m" type="submit">Intake Fan On</button>
+  <button class="controlButton"  id="m" type="submit">Intake Fan Off</button>
+  <button class="controlButton"  id="mybun" type="submit">Outtake Fan On</button>
+  <button class="controlButton"  id="myon" type="submit">Outtake Fan Off</button>
 </form>
 </div>
 
 <div class="controlArea">
  <form method="POST">
-  <button class="controlButton"  id="mybutton" type="submit">Acid Pump On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Acid Pump Off</button>
-  <button class="controlButton"  id="mybutton" type="submit">Base Pump On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Base Pump Off</button>
+  <button class="controlButton"  id="mybn" type="submit">Acid Pump On</button>
+  <button class="controlButton"  id="myon" type="submit">Acid Pump Off</button>
+  <button class="controlButton"  id="myon" type="submit">Base Pump On</button>
+  <button class="controlButton"  id="myon" type="submit">Base Pump Off</button>
 </form>
 </div>
 
