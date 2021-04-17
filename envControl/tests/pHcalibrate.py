@@ -1,5 +1,5 @@
 
-from control import sensorControl
+from envControl.control import sensorControl
 import sqlite3
 
 

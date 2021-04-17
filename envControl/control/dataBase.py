@@ -15,7 +15,7 @@ def tables_in_sqlite_db(conn):
 
 
 def getParameter(parameter):
-	conn = sqlite3.connect('../databases/parameters.db')
+	conn = sqlite3.connect('databases/parameters.db')
 	cur = conn.cursor()
 
 	with conn:

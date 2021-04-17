@@ -1,5 +1,5 @@
-import control.serialBase as serialBase
-import control.dataBase as dataBase
+import envControl.control.serialBase as serialBase
+import envControl.control.dataBase as dataBase
 import time
 
 # function to read analog input pH and convert to pH

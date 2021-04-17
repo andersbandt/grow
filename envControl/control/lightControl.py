@@ -1,4 +1,4 @@
-import control.relayBase as relayBase
+import envControl.control.relayBase as relayBase
 
 
 light_pin = 2

@@ -1,6 +1,6 @@
-from control import pHControl
-from control import pumpControl
-from control import sensorControl
+from envControl.control import pHControl
+from envControl.control import pumpControl
+from envControl.control import sensorControl
 import time
 import csv
 

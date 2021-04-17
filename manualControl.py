@@ -6,8 +6,8 @@ import envControl.control.airControl as airControl
 import envControl.control.sensorControl as sensorControl
 import envControl.control.relayBase as relayBase
 
-import tests.pHcalibrate as pHcalibrate
-import tests.pHtest as pHtest
+import envControl.tests.pHcalibrate as pHcalibrate
+import envControl.tests.pHtest as pHtest
 
 
 # main method to run to gather user input
