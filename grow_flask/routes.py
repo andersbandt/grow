@@ -25,6 +25,10 @@ def home():
 def index_return():
 	return home()
 
+@blueprint.route('/automate.html')
+def automate():
+	return render_template('automate.html')
+
 @blueprint.route('/control.html')
 def control():
 	return render_template('control.html', **locals())
@@ -34,9 +38,16 @@ def recordPH():
 	sensorControl.readpH()
 	return
 
-@blueprint.route('lightOn')
+@blueprint.route('/lightOn')
 def lightOn():
+	print("The light should be on")
 	lightControl.lightOn()
+	return
+
+@blueprint.route('/lightOff')
+def lightOff():
+	print("The light should be off")
+	lightControl.lightOff()
 	return
 
 @blueprint.route('/airOn')
