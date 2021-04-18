@@ -19,6 +19,7 @@ def main():
 		print("Press 3 to control pH")
 		print("Press 4 to control pumps")
 		print("Press 5 to read sensor input")
+		print("Press 6 to control air and water")
 		print("Press 9 to quit")
 		are = int(input("Enter control area number!"))
 
@@ -32,6 +33,8 @@ def main():
 			controlPumps()
 		elif are == 5:
 			controlSensors()
+		elif are == 6:
+			controlAirWater()
 		elif are == 9:
 			quit = True
 
@@ -57,12 +60,18 @@ def controlFans():
 
 	if act == 1:
 		fanControl.intakeOn()
+		controlFans()
 	elif act == 2:
 		fanControl.intakeOff()
+		controlFans()
 	elif act == 3:
 		fanControl.outtakeOn()
+		controlFans()
 	elif act == 4:
 		fanControl.outtakeOff()
+		controlFans()
+	elif act == 9:
+		return
 
 
 # function to control pH
@@ -146,6 +155,25 @@ def controlSensors():
 		controlSensors()
 	elif act == 9:
 		return
+
+
+
+# function to control air and water pumps within tank
+def controlAirWater():
+	print("Press 1 to turn air on")
+	print("Press 2 to turn air off")
+
+	act = int(input("Enter control action please!"))
+
+	if act == 1:
+		airControl.airOn()
+		controlAirWater()
+	elif act == 2:
+		airControl.airOff()
+		controlAirWater()
+	elif act == 9:
+		return
+
 
 # function to control nutrients
 def controlNutrients():

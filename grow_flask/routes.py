@@ -42,27 +42,27 @@ def recordPH():
 def lightOn():
 	print("The light should be on")
 	lightControl.lightOn()
-	return
+	return "Light status: on"
 
 @blueprint.route('/lightOff')
 def lightOff():
 	print("The light should be off")
 	lightControl.lightOff()
-	return
+	return "Light status: off"
 
 @blueprint.route('/airOn')
 def airOn():
 	print("The air pump should be on!")
 	airControl.airOn()
-	return
+	return "Air status: on"
 
 @blueprint.route('/airOff')
 def airOff():
 	print("The air pump should be off!")
 	airControl.airOff()
-	return
+	return "Air status: off"
 
 @blueprint.route('/waterOn')
 def waterOn():
 	waterControl.waterOn()
-	return
+	return "Water status: on"
