@@ -39,42 +39,46 @@
 </div>
 
 
-<div class="controlArea">
- 	<button class="controlButton" id="mybutton" type="submit">Test 1n</button>
-	<button class="controlButton" id="airOn" type="submit">Air Pump On</button>
- 	<button class="controlButton" id="airOff" type="submit">Air Pump Off</button>
- 	<button class="controlButton"  id="my" type="submit">Water Pump On</button>
-	<button class="controlButton" id="my" type="submit">Water Pump Off</button>
-</div>
- 
-<div class="controlArea">
- <form method="POST">
-  <button class="controlButton"  id="m" type="submit">Intake Fan On</button>
-  <button class="controlButton"  id="m" type="submit">Intake Fan Off</button>
-  <button class="controlButton"  id="mybun" type="submit">Outtake Fan On</button>
-  <button class="controlButton"  id="myon" type="submit">Outtake Fan Off</button>
-</form>
-</div>
-
-<div class="controlArea">
- <form method="POST">
-  <button class="controlButton"  id="mybn" type="submit">Acid Pump On</button>
-  <button class="controlButton"  id="myon" type="submit">Acid Pump Off</button>
-  <button class="controlButton"  id="myon" type="submit">Base Pump On</button>
-  <button class="controlButton"  id="myon" type="submit">Base Pump Off</button>
-</form>
-</div>
-
-
-<table class="partsList">
-  <tr>
-    <th>Lights</th>
-  </tr>
-  <tr>
-    <td>Lights on</td>
-  </tr>
+<table class="controlArea" id="AirWaterControl">
+	<tr>
+		<td><button class="controlButton" id="airOn" type="submit">Air On</button></td>
+		<td><button class="controlButton" id="waterOn" type="submit">Water On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="airOff" type="submit">Air Off</button></td>
+		<td><button class="controlButton" id="waterOff" type="submit">Water Off</button></td>
+	</tr>
 </table>
 
+<table class="controlArea" id="lightControl">
+	<tr>
+		<td><button class="controlButton" id="lightOn" type="submit">Light On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="lightOff" type="submit">Light Off</button></td>
+	</tr>
+</table>
+	
+<table class="controlArea" id="fanControl">
+	<tr>
+		<td><button class="controlButton" id="intakeFanOn" type="submit">Intake Fan On</button></td>
+		<td><button class="controlButton" id="outtakeFanOn" type="submit">Outtake Fan On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="intakeFanOff" type="submit">Intake Fan Off</button></td>
+		<td><button class="controlButton" id="outtakeFanOff" type="submit">Outtake Fan Off</button></td>
+	</tr>
+</table>
+
+<table class="controlArea" id="sensorControl">
+	<tr>
+		<td><button class="controlButton" id="readpH" type="submit">Display pH</button></td>
+		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display EC</button></td>
+		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display TDS</button></td>
+		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display Air Temperature</button></td>
+	</tr>
+</table>
+	
 
 </body>
 </html>
