@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hidden Hydroponics Management</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script> type="text/javascript">
+
+	$(function() {
+		$("button#airOn").click(function (event) { 
+        		$.getJSON('/airOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+       
+    </script> 
+
+</head>
+<body>
+
+<h1>Hidden Hydroponics</h1>
+
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="index.html">Home</a>
+    </li>
+    <li><a href="automate.html">Configure Automation</a>
+    </li>
+    <li><a href="data.html">Data Management</a>
+    </li>
+    <li><a href="control.html">Manual Control</a>
+  </ul>
+</div>
+
+  
+<table class="scheduleArea" id="lightControl">
+	<tr>
+		<td>Light On Time</td>
+    <td></td
+    <td><input type="text"></td>
+	</tr>
+	<tr>
+		<td>Light Off Time</td>
+    <td></td
+    <td><input type="text"></td>
+	</tr>
+</table>
+	
+</body>
+</html>
