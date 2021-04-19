@@ -16,7 +16,96 @@
         	return false;
 		});
 	});
-       
+		
+	$(function() {
+		$("button#airOff").click(function (event) { 
+        		$.getJSON('/airOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#lightOn").click(function (event) { 
+        		$.getJSON('/lightOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#lightOff").click(function (event) { 
+        		$.getJSON('/lightOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#intakeOn").click(function (event) { 
+        		$.getJSON('/intakeOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#intakeOff").click(function (event) { 
+        		$.getJSON('/intakeOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#outtakeOn").click(function (event) { 
+        		$.getJSON('/outtakeOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#outtakeOn").click(function (event) { 
+        		$.getJSON('/outtakeOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readpH").click(function (event) { 
+        		$.getJSON('/readpH', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readEC").click(function (event) { 
+        		$.getJSON('/readEC', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readTDS").click(function (event) { 
+        		$.getJSON('/readTDS', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readAir").click(function (event) { 
+        		$.getJSON('/readAir', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+		
     </script> 
 
 
@@ -73,9 +162,9 @@
 <table class="controlArea" id="sensorControl">
 	<tr>
 		<td><button class="controlButton" id="readpH" type="submit">Display pH</button></td>
-		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display EC</button></td>
-		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display TDS</button></td>
-		<td><button class="controlButton" id="outtakeFanOn" type="submit">Display Air Temperature</button></td>
+		<td><button class="controlButton" id="readEC" type="submit">Display EC</button></td>
+		<td><button class="controlButton" id="readTDS" type="submit">Display TDS</button></td>
+		<td><button class="controlButton" id="readAir" type="submit">Display Air Temperature</button></td>
 	</tr>
 </table>
 	
