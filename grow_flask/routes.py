@@ -38,6 +38,12 @@ def recordPH():
 	sensorControl.readpH()
 	return
 
+@blueprint.route('/recordEC')
+def recordPH():
+	sensorControl.readEC()
+	return
+
+# light stuff
 @blueprint.route('/lightOn')
 def lightOn():
 	print("The light should be on")
@@ -50,6 +56,7 @@ def lightOff():
 	lightControl.lightOff()
 	return "Light status: off"
 
+# air and water stuff
 @blueprint.route('/airOn')
 def airOn():
 	print("The air pump should be on!")
@@ -65,4 +72,38 @@ def airOff():
 @blueprint.route('/waterOn')
 def waterOn():
 	waterControl.waterOn()
+	print("The main water pump should be on")
 	return "Water status: on"
+
+@blueprint.route('/waterOff')
+def waterOff():
+	print("The water pump should be off!")
+	waterControl.waterOff()
+	return "water status: off"
+
+# fan stuff
+@blueprint.route('/intakeOn')
+def intakeOn():
+	fanControl.intakeOn()
+	print("The intake fan should be on")
+	return "Intake status: on"
+
+@blueprint.route('/intakeOff')
+def intakeOn():
+	fanControl.intakeOff()
+	print("The intake fan should be off")
+	return "Intake status: off"
+
+@blueprint.route('/outtakeOn')
+def intakeOn():
+	fanControl.outtakeOn()
+	print("The outtake fan should be on")
+	return "Intake status: on"
+
+@blueprint.route('/outtakeOff')
+def intakeOn():
+	fanControl.outtakeOff()
+	print("The outtake fan should be off")
+	return "Intake status: off"
+
+
