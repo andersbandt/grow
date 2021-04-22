@@ -42,7 +42,7 @@
 	});
 		
 	$(function() {
-		$("button#intakeOn").click(function (event) { 
+		$("button#intakeFanOn").click(function (event) { 
         		$.getJSON('/intakeOn', function(data) {
 			 }); 
         	return false;
@@ -50,7 +50,7 @@
 	});
 		
 	$(function() {
-		$("button#intakeOff").click(function (event) { 
+		$("button#intakeFanOff").click(function (event) { 
         		$.getJSON('/intakeOff', function(data) {
 			 }); 
         	return false;
@@ -58,7 +58,7 @@
 	});
 		
 	$(function() {
-		$("button#outtakeOn").click(function (event) { 
+		$("button#outtakeFanOn").click(function (event) { 
         		$.getJSON('/outtakeOn', function(data) {
 			 }); 
         	return false;
@@ -66,7 +66,7 @@
 	});
 		
 	$(function() {
-		$("button#outtakeOn").click(function (event) { 
+		$("button#outtakeFanOn").click(function (event) { 
         		$.getJSON('/outtakeOff', function(data) {
 			 }); 
         	return false;
@@ -77,7 +77,7 @@
 		$("button#readpH").click(function (event) { 
         		$.getJSON('/readpH', function(data) {
 			 }); 
-        	return false;
+        	return 7;
 		});
 	});
 		
@@ -165,6 +165,12 @@
 		<td><button class="controlButton" id="readEC" type="submit">Display EC</button></td>
 		<td><button class="controlButton" id="readTDS" type="submit">Display TDS</button></td>
 		<td><button class="controlButton" id="readAir" type="submit">Display Air Temperature</button></td>
+	</tr>
+	<tr>
+		<td><p>pH: {{ pH }}</p></td>
+		<td><p>{{ EC }}</p></td>
+		<td><p>{{ TDS }}</p></td>
+		<td><p>{{ airTemp}}</p></td>
 	</tr>
 </table>
 	

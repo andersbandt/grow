@@ -17,6 +17,7 @@ from envControl.control import sensorControl
 
 blueprint = Blueprint('routes', __name__, static_folder='static', template_folder='/templates')
 
+# site navigation stuff
 @blueprint.route('/')
 def home():
 	return render_template('index.html',**locals()) # locals are the variables I pass
@@ -33,15 +34,16 @@ def automate():
 def control():
 	return render_template('control.html', **locals())
 
-@blueprint.route('/recordpH')
+# sensor stuff
+@blueprint.route('/readpH')
 def recordPH():
-	sensorControl.readpH()
-	return
+	pHString = str(sensorControl.readpH())
+	return render_template('control.html', pH = pHString)
 
-@blueprint.route('/recordEC')
+@blueprint.route('/readEC')
 def recordEC():
-	sensorControl.readEC()
-	return
+	ECVal = sensorControl.readEC()
+	return render_template('control.html', EC = ECVal)
 
 # light stuff
 @blueprint.route('/lightOn')
@@ -74,12 +76,14 @@ def waterOn():
 	waterControl.waterOn()
 	print("The main water pump should be on")
 	return "Water status: on"
+	return render_template('control.html', **locals())
 
 @blueprint.route('/waterOff')
 def waterOff():
 	print("The water pump should be off!")
 	waterControl.waterOff()
 	return "water status: off"
+	return render_template('control.html', **locals())
 
 # fan stuff
 @blueprint.route('/intakeOn')
@@ -87,23 +91,24 @@ def intakeOn():
 	fanControl.intakeOn()
 	print("The intake fan should be on")
 	return "Intake status: on"
+	return render_template('control.html', **locals())
 
 @blueprint.route('/intakeOff')
 def intakeOff():
 	fanControl.intakeOff()
 	print("The intake fan should be off")
-	return "Intake status: off"
+	return render_template('control.html', **locals())
 
 @blueprint.route('/outtakeOn')
 def outtakeOn():
 	fanControl.outtakeOn()
 	print("The outtake fan should be on")
-	return "Intake status: on"
+	return render_template('control.html', **locals())
 
 @blueprint.route('/outtakeOff')
 def outtakeOff():
 	fanControl.outtakeOff()
 	print("The outtake fan should be off")
-	return "Intake status: off"
+	return render_template('control.html', **locals())
 
 
