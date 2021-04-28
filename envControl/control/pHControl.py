@@ -9,7 +9,7 @@ upper_range = 6.0
 
 mL_per_gallon = 15 # recommended addition of solution per gallon
 pH_slope = .4 # pH increase for every mL drop/gallon of water
-tank_size = 9 # tank size in gallons
+tank_size = 5 # tank size in gallons
 
 
 if __name__ == "__main__":
@@ -17,29 +17,19 @@ if __name__ == "__main__":
 
 
 def main():
-	con = lite.connect('databases/readings.db')
-	pH = sensors.readpH()
-	now = datetime.now()
-	dt_string = now.strftime("%d//%m/%Y %H:%M:%S")
-	with con:
-		cur = con.cursor()
-		cur.execute("INSERT INTO pH VALUES(dt_string, pH)")
-		print("pH value of ", pH, " recorded at ", dt_string, " inserted")
-	if pH > upper_range:
-		addAcid(pH)
-	elif pH < lower_range:
-		addBase(pH)
-
+	return True
 
 def addBase():
 	amount = 1
 	pumpControl.pumpFluid('base', amount)
 	print("Pumped ", amount, "of base to the tank")
 
+
 def addAcid():
 	amount = 1
 	pumpControl.pumpFluid('acid', amount)
 	print("Pumped ", amount, "of acid to the tank")
+
 
 def calibratePH():
 	return True

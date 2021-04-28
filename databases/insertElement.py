@@ -1,12 +1,24 @@
 import sqlite3
 
-conn = sqlite3.connect('parameters.db')
+
+def insertCalibration():
+	conn = sqlite3.connect('parameters.db')
+	conn.execute("INSERT INTO CALIBRATION (TYPE, VALUE) \
+			VALUES ('pHslope', -6.17)")
+	conn.commit()
+	conn.close()
 
 
 
-conn.execute("INSERT INTO CALIBRATION (TYPE, VALUE) \
-		VALUES ('pHslope', -6.17)")
+def insertState(area):
+	conn = sqlite3.connect('databases/parameters.db')
+	cur = conn.cursor()
 
-conn.commit()
+	with conn:
+		cur.execute('INSERT INTO STATES (AREA, TIMESTAMP, STATE) WHERE type=?', (area, 1.0, 0))
 
-conn.close()
+	conn.close()
+
+
+insertState("Light")
+

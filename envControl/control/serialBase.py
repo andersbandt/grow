@@ -3,7 +3,6 @@ import serial
 import time
 
 # set up serial connection
-
 ser = serial.Serial(
     port='/dev/ttyUSB0',
     baudrate = 9600,

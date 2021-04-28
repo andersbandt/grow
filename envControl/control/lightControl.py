@@ -1,11 +1,11 @@
 import envControl.control.relayBase as relayBase
 
 
-light_pin = 2
+light_pin = 4
 
 def lightOn():
-	relayControl.relayOn(light_pin)
+	relayBase.relayOn(light_pin)
 
 
 def lightOff():
-	relayControl.relayOff(light_pin)
+	relayBase.relayOff(light_pin)

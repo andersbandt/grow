@@ -1,6 +1,16 @@
 import envControl.control.serialBase as serialBase
-import envControl.control.dataBase as dataBase
+from database import dataBase
 import time
+import datetime
+
+
+# saveValue: formats sensor reading and sends it to dataBase function
+# 	to save it to the database
+# inputs: sensor - type of sensor input; value - value of sensor reading
+def saveValue(sensor, value):
+	now = datetime.datetime.now()
+	#dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+	dataBase.insertReading(sensor,  value, now)
 
 # function to read analog input pH and convert to pH
 def readpH():

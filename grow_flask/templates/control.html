@@ -6,14 +6,106 @@
   <link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css">
 
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script> type="text/javascript">
 
-    <script type="text/javascript"> 
-      $(function() { $("#mybutton").click(function (event) { 
-        $.getJSON('/firstFunction', { }, function(data) { }); 
-        return false;
-      }); 
-    }); 
+	$(function() {
+		$("button#airOn").click(function (event) { 
+        		$.getJSON('/airOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#airOff").click(function (event) { 
+        		$.getJSON('/airOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#lightOn").click(function (event) { 
+        		$.getJSON('/lightOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#lightOff").click(function (event) { 
+        		$.getJSON('/lightOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#intakeFanOn").click(function (event) { 
+        		$.getJSON('/intakeOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#intakeFanOff").click(function (event) { 
+        		$.getJSON('/intakeOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#outtakeFanOn").click(function (event) { 
+        		$.getJSON('/outtakeOn', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#outtakeFanOn").click(function (event) { 
+        		$.getJSON('/outtakeOff', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readpH").click(function (event) { 
+        		$.getJSON('/readpH', function(data) {
+			 }); 
+        	return 7;
+		});
+	});
+		
+	$(function() {
+		$("button#readEC").click(function (event) { 
+        		$.getJSON('/readEC', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readTDS").click(function (event) { 
+        		$.getJSON('/readTDS', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+	$(function() {
+		$("button#readAir").click(function (event) { 
+        		$.getJSON('/readAir', function(data) {
+			 }); 
+        	return false;
+		});
+	});
+		
+		
     </script> 
 
 
@@ -36,43 +128,52 @@
 </div>
 
 
-<div class="controlArea">
- <form method="POST">
-  <button class="controlButton" id="mybutton" type="submit">Test 1n</button>
-  <button id="mybutton" type="submit">Air Pump Off</button>
-  <button id="mybutton" type="submit">Water Pump On</button>
-  <button id="mybutton" type="submit">Water Pump Off</button>
-</form>
-</div>
- 
-<div class="controlArea">
- <form method="POST">
-  <button class="controlButton"  id="mybutton" type="submit">Intake Fan On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Intake Fan Off</button>
-  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Outtake Fan Off</button>
-</form>
-</div>
-
-<div class="controlArea">
- <form method="POST">
-  <button class="controlButton"  id="mybutton" type="submit">Acid Pump On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Acid Pump Off</button>
-  <button class="controlButton"  id="mybutton" type="submit">Base Pump On</button>
-  <button class="controlButton"  id="mybutton" type="submit">Base Pump Off</button>
-</form>
-</div>
-
-
-<table class="partsList">
-  <tr>
-    <th>Lights</th>
-  </tr>
-  <tr>
-    <td>Lights on</td>
-  </tr>
+<table class="controlArea" id="AirWaterControl">
+	<tr>
+		<td><button class="controlButton" id="airOn" type="submit">Air On</button></td>
+		<td><button class="controlButton" id="waterOn" type="submit">Water On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="airOff" type="submit">Air Off</button></td>
+		<td><button class="controlButton" id="waterOff" type="submit">Water Off</button></td>
+	</tr>
 </table>
 
+<table class="controlArea" id="lightControl">
+	<tr>
+		<td><button class="controlButton" id="lightOn" type="submit">Light On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="lightOff" type="submit">Light Off</button></td>
+	</tr>
+</table>
+	
+<table class="controlArea" id="fanControl">
+	<tr>
+		<td><button class="controlButton" id="intakeFanOn" type="submit">Intake Fan On</button></td>
+		<td><button class="controlButton" id="outtakeFanOn" type="submit">Outtake Fan On</button></td>
+	</tr>
+	<tr>
+		<td><button class="controlButton" id="intakeFanOff" type="submit">Intake Fan Off</button></td>
+		<td><button class="controlButton" id="outtakeFanOff" type="submit">Outtake Fan Off</button></td>
+	</tr>
+</table>
+
+<table class="controlArea" id="sensorControl">
+	<tr>
+		<td><button class="controlButton" id="readpH" type="submit">Display pH</button></td>
+		<td><button class="controlButton" id="readEC" type="submit">Display EC</button></td>
+		<td><button class="controlButton" id="readTDS" type="submit">Display TDS</button></td>
+		<td><button class="controlButton" id="readAir" type="submit">Display Air Temperature</button></td>
+	</tr>
+	<tr>
+		<td><p>pH: {{ pH }}</p></td>
+		<td><p>{{ EC }}</p></td>
+		<td><p>{{ TDS }}</p></td>
+		<td><p>{{ airTemp}}</p></td>
+	</tr>
+</table>
+	
 
 </body>
 </html>

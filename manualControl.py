@@ -3,22 +3,29 @@ import envControl.control.fanControl as fanControl
 import envControl.control.pHControl as pHControl
 import envControl.control.pumpControl as pumpControl
 import envControl.control.airControl as airControl
+import envControl.control.waterControl as waterControl
 import envControl.control.sensorControl as sensorControl
 import envControl.control.relayBase as relayBase
 
 import envControl.tests.pHcalibrate as pHcalibrate
 import envControl.tests.pHtest as pHtest
 
+from databases import *
+from scheduler import *
+
 
 # main method to run to gather user input
 def main():
 	quit = False
 	while not quit:
-		print("Press 1 to control lights")
+		print("Press 1 to control light")
 		print("Press 2 to control fans")
 		print("Press 3 to control pH")
 		print("Press 4 to control pumps")
 		print("Press 5 to read sensor input")
+		print("Press 6 to control air and water")
+		print("Press 7 to do a schedule/status check")
+		print("Press 8 to update the schedule")
 		print("Press 9 to quit")
 		are = int(input("Enter control area number!"))
 
@@ -32,6 +39,12 @@ def main():
 			controlPumps()
 		elif are == 5:
 			controlSensors()
+		elif are == 6:
+			controlAirWater()
+		elif are == 7:
+			checkSchedule()
+		elif are == 8:
+			updateSchedule()
 		elif are == 9:
 			quit = True
 
@@ -43,8 +56,10 @@ def controlLights():
 
 	if act == 1:
 		lightControl.lightOn()
+		controlLights()
 	elif act == 2:
 		lightControl.lightOff()
+		controlLights()
 
 
 # function to control fans
@@ -57,12 +72,18 @@ def controlFans():
 
 	if act == 1:
 		fanControl.intakeOn()
+		controlFans()
 	elif act == 2:
 		fanControl.intakeOff()
+		controlFans()
 	elif act == 3:
 		fanControl.outtakeOn()
+		controlFans()
 	elif act == 4:
 		fanControl.outtakeOff()
+		controlFans()
+	elif act == 9:
+		return
 
 
 # function to control pH
@@ -106,13 +127,30 @@ def controlPumps():
 	print("Press 11 to quit")
 	act = int(input("Enter control action please"))
 
-	if act == 7:
+	if act == 1: # pump 1
+		relayBase.relayOn(5)
+	elif act == 2:
+		relayBase.relayOff(5)
+		controlPumps()
+	elif act == 3: # pump 2
+		relayBase.relayOn(6)
+		controlPumps()
+	elif act == 4:
+		relayBase.relayOff(6) 
+		controlPumps()
+	elif act == 5: # pump 3
+		relayBase.relayOn(13)
+		controlPumps()
+	elif act == 6:
+		relayBase.relayOff(13) 
+		controlPumps()
+	elif act == 7: # pump 4
 		relayBase.relayOn(19)
 		controlPumps()
 	elif act == 8:
 		relayBase.relayOff(19)
 		controlPumps()
-	elif act == 9:
+	elif act == 9: # pump 5
 		relayBase.relayOn(26)
 		controlPumps()
 	elif act == 10:
@@ -147,6 +185,39 @@ def controlSensors():
 	elif act == 9:
 		return
 
+
+
+# function to control air and water pumps within tank
+def controlAirWater():
+	print("Press 1 to turn air on")
+	print("Press 2 to turn air off")
+	print("Press 3 to turn water pump on")
+	print("Press 4 to turn water pump off")
+	print("Press 5 to empty the tank (timed)")
+	print("Press 6 to empty the tank (amount)")
+
+	act = int(input("Enter control action please!"))
+
+	if act == 1:
+		airControl.airOn()
+		controlAirWater()
+	elif act == 2:
+		airControl.airOff()
+		controlAirWater()
+	elif act == 3:
+		waterControl.waterOn()
+		controlAirWater()
+	elif act == 4:
+		waterControl.waterOff()
+		controlAirWater()
+	elif act == 5:
+		waterControl.emptyTankTimed()
+	elif act == 6:
+		waterControl.emptyTankAmount()
+	elif act == 9:
+		return
+
+
 # function to control nutrients
 def controlNutrients():
 	print("Press 1 to add 284")
@@ -163,10 +234,14 @@ def controlNutrients():
 		pumpControl.pumpFluid('057', 15) # should theoretically pump 15 mL of nutrient fluid
 
 
+# function to run a schedule check
+def checkSchedule():
+	checkSchedule.main()
 
 
-
-
+# function to update the schedule
+def updateSchedule():
+	updateSchedule.updateSchedule()
 
 
 
