@@ -22,14 +22,13 @@ def checkLights(cur_time):
   # find time since interval
 
 
-def main():
-  cur_time = datetime.now()
+def checkAll():
+  cur_time = datetime.datetime.now()
   cur_time = int(cur_time.strftime('%H%M%S'))
   print(cur_time)
   checkSensors(cur_time)
   checkFans(cur_time)
   checkLights(cur_time)
-  
 
 if __name__ == "__main__":
   main()

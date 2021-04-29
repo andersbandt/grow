@@ -4,27 +4,27 @@ import os
 # insertReading: insert a value into the readings database
 # inputs: sensor - sensor from which the reading is coming from, should take the form
 # 	of a string with the same name as the desired table name
-def insertReading(sensor, value, date_string)
+def insertReading(sensor, value, date_string):
 	conn = lite.connect('databases/readings.db')
 	cur = conn.cursor()
 
 	with conn:
 		cur = con.cursor()
-		cur.execute("INSERT INTO ? (DATETIME, VALUE) \
-			VALUES(?, ?)", (sensor, value, date_string))
-		
+		cur.execute('INSERT INTO ? (DATETIME, VALUE) \
+			VALUES(?, ?)', (sensor, value, date_string))
+
 	print(sensor, " value of ", value, " recorded at ", date_string, " inserted into readings")
 	conn.close()
 	return True
 
 # getParameter: returns certain calibration parameter
-# input: parameter - string representing parameter type 
+# input: parameter - string representing parameter type
 def getParameter(parameter):
 	conn = sqlite3.connect('databases/parameters.db')
 	cur = conn.cursor()
 
 	with conn:
-		cur.execute('SELECT * FROM CALIBRATION WHERE type=?', (parameter))
+		cur.execute('SELECT * FROM CALIBRATION WHERE type=?', (parameter,))
 		parameter = cur.fetchall()
 
 	conn.close()
@@ -48,7 +48,7 @@ def updateScheduleParam(area, num, value):
 		return False
 
 	with conn:
-		cur.execute('UPDATE * FROM SCHEDULE SET WHERE area=?', (area))
+		cur.execute('UPDATE * FROM SCHEDULE SET WHERE area=?', (area,))
 
 	conn.close()
 

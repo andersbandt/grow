@@ -7,11 +7,13 @@ import envControl.control.waterControl as waterControl
 import envControl.control.sensorControl as sensorControl
 import envControl.control.relayBase as relayBase
 
+
 import envControl.tests.pHcalibrate as pHcalibrate
 import envControl.tests.pHtest as pHtest
+import envControl.tests.ECtest as ECtest
 
 from databases import *
-from scheduler import *
+import scheduler.checkSchedule as checkScheduler
 
 
 # main method to run to gather user input
@@ -26,7 +28,8 @@ def main():
 		print("Press 6 to control air and water")
 		print("Press 7 to do a schedule/status check")
 		print("Press 8 to update the schedule")
-		print("Press 9 to quit")
+		print("Press 9 to run some system tests")
+		print("Press anything else to quit")
 		are = int(input("Enter control area number!"))
 
 		if are == 1:
@@ -46,6 +49,8 @@ def main():
 		elif are == 8:
 			updateSchedule()
 		elif are == 9:
+			runTests()
+		else:
 			quit = True
 
 # function to control lights
@@ -136,13 +141,13 @@ def controlPumps():
 		relayBase.relayOn(6)
 		controlPumps()
 	elif act == 4:
-		relayBase.relayOff(6) 
+		relayBase.relayOff(6)
 		controlPumps()
 	elif act == 5: # pump 3
 		relayBase.relayOn(13)
 		controlPumps()
 	elif act == 6:
-		relayBase.relayOff(13) 
+		relayBase.relayOff(13)
 		controlPumps()
 	elif act == 7: # pump 4
 		relayBase.relayOn(19)
@@ -156,8 +161,8 @@ def controlPumps():
 	elif act == 10:
 		relayBase.relayOff(26)
 		controlPumps()
-	elif act == 11:
-		main()
+	else:
+		return
 
 
 # function to control sensors
@@ -211,9 +216,11 @@ def controlAirWater():
 		waterControl.waterOff()
 		controlAirWater()
 	elif act == 5:
-		waterControl.emptyTankTimed()
+		waterControl.emptyTankTimed(-1)
+		controlAirWater()
 	elif act == 6:
 		waterControl.emptyTankAmount()
+		controlAirWater()
 	elif act == 9:
 		return
 
@@ -236,13 +243,23 @@ def controlNutrients():
 
 # function to run a schedule check
 def checkSchedule():
-	checkSchedule.main()
+	checkScheduler.checkAll()
 
 
 # function to update the schedule
 def updateSchedule():
 	updateSchedule.updateSchedule()
 
+
+def runTests():
+	print("Press 1 to run a nutrient test (parameters already declared")
+
+	act = int(input("Enter control action please!"))
+
+	if act == 1:
+		ECtest.testNutrient()
+	else:
+		return
 
 
 

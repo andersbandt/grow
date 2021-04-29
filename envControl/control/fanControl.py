@@ -2,8 +2,8 @@ import envControl.control.relayBase as relayBase
 import time
 
 
-intake_pin = 10
-outtake_pin = 22
+intake_pin = 22
+outtake_pin = 10
 
 
 def intakeOn():

@@ -1,5 +1,5 @@
 import envControl.control.serialBase as serialBase
-from database import dataBase
+from databases import dataBase
 import time
 import datetime
 
@@ -14,7 +14,7 @@ def saveValue(sensor, value):
 
 # function to read analog input pH and convert to pH
 def readpH():
-	m = dataBase.getParameter('pHslope')
+	m = dataBase.getParameter("pHslope")
 	serialBase.sendChar('P')
 	time.sleep(.5)
 	pH_voltage = float(serialBase.readLine()[:4]) # get rid of the new line carriage '\r\n' and convert to float
