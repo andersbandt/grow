@@ -57,7 +57,7 @@ def updateScheduleParam(area, num, value):
 # input: area - control area
 # output: 0/1 representing off/on
 def getState(area):
-	conn = sqlite3.connect('databases/parameters.db')
+	conn = sqlite3.connect('databases/runtimes.db')
 	cur = conn.cursor()
 
 	with conn:

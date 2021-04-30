@@ -11,7 +11,7 @@ def insertCalibration():
 
 
 def insertState(area):
-	conn = sqlite3.connect('databases/parameters.db')
+	conn = sqlite3.connect('runtimes.db')
 	cur = conn.cursor()
 
 	with conn:

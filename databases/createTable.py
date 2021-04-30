@@ -1,13 +1,16 @@
 import sqlite3
 
-conn = sqlite3.connect('parameters.db')
-print("Opened database successfully")
+database = 'runtimes.db'
+
+conn = sqlite3.connect(database)
+print("Opened ", database, " successfully")
 
 
-conn.execute('''CREATE TABLE CALIBRATION
+conn.execute('''CREATE TABLE STATES
 		(ID INTEGER PRIMARY KEY AUTOINCREMENT,
 		AREA     TEXT   NOT NULL,
-		STATE        FLOAT    NOT NULL);''')
+		DATETIME TEXT   NOT NULL,
+		STATE    INT    NOT NULL);''')
 
 print("Table created successfuly")
 
