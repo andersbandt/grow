@@ -15,7 +15,7 @@ def insertState(area):
 	cur = conn.cursor()
 
 	with conn:
-		cur.execute('INSERT INTO STATES (AREA, TIMESTAMP, STATE) WHERE type=?', (area, 1.0, 0))
+		cur.execute('INSERT INTO STATES (AREA, DATETIME, STATE) VALUES (?, 1.0, 0)', (area,))
 
 	conn.close()
 

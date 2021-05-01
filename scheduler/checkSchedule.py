@@ -17,9 +17,11 @@ def checkFans(cur_time):
 
 
 def checkLights(cur_time):
-  state, state_time = dataBase.getState("light") # get state and timestamp of light
-  timediff = cur_time - state_time
-  # find time since interval
+	state, state_time = dataBase.getState("Light") # get state and timestamp of light
+	print(state)
+	print(state_time)
+	timediff = cur_time - state_time
+	# find time since interval
 
 
 def checkAll():

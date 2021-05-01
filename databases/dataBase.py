@@ -26,9 +26,10 @@ def getParameter(parameter):
 	with conn:
 		cur.execute('SELECT * FROM CALIBRATION WHERE type=?', (parameter,))
 		parameter = cur.fetchall()
-
+		print("I received this as a parameter")
+		print(parameter)
 	conn.close()
-	return parameter[0][2]
+	return 0, 140010
 
 
 # updateScheduleParam: updates a control area's parameters in the database
@@ -61,11 +62,13 @@ def getState(area):
 	cur = conn.cursor()
 
 	with conn:
-		cur.execute('SELECT * FROM STATES WHERE area=?', (area))
+		cur.execute('SELECT * FROM STATES WHERE area=?', (area,))
 		parameter = cur.fetchall()
+		print("I received this as a parameter")
+		print(parameter)
 
 	conn.close()
-	return parameter[0][2:4] # should return the state and the timestamp
+	return parameter[0][2], parameter[0][3] # should return the state and the timestamp
 
 
 # should print all the databases in a database
