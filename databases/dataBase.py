@@ -55,17 +55,15 @@ def updateScheduleParam(area, num, value):
 	conn = sqlite3.connect('databases/parameters.db')
 	cur = conn.cursor()
 
-	if num == 1:
-		param = 'PARAM1'
-	elif num == 2:
-		param == 'PARAM2'
-	else:
-		print("Invalid parameter number sent")
-		return False
-
 	with conn:
-		cur.execute('UPDATE SCHEDULE SET ?=? WHERE area=?', (param, value, area,))
-
+		if num == 1:
+			print("Going to attempt to set parameter 1 to", value)
+			print("The area val;ue I wgot was", area)
+			cur.execute('UPDATE SCHEDULE SET PARAM1=? WHERE area=?', (value, area,))
+		elif num == 2:
+			cur.execute('UPDATE SCHEDULE SET PARAM2=? WHERE AREA=?', (value, area,))
+		else:
+			print("Whoops, invalid parameter number sent")
 	conn.close()
 
 

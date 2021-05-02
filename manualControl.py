@@ -250,7 +250,7 @@ def checkSchedule():
 
 # function to update the schedule
 def updateSchedule():
-	updateScheduler.updateSchedule()
+	updateScheduler.updateSchedule(-1)
 
 
 def runTests():
