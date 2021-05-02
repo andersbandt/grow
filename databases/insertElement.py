@@ -20,5 +20,18 @@ def insertState(area):
 	conn.close()
 
 
-insertState("Light")
+def insertSchedule(area):
+	conn = sqlite3.connect('parameters.db')
+	cur = conn.cursor()
+
+	with conn:
+		cur.execute('INSERT INTO SCHEDULE (AREA, PARAM1, PARAM2) VALUES (?, 100000, 16)', (area,))
+
+	conn.close()	
+
+
+#insertState("Light")
+insertSchedule("Light")
+
+
 
