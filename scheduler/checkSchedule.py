@@ -18,6 +18,8 @@ def checkFans(cur_time):
 
 def checkLights(cur_time):
 	state_time, state = dataBase.getState("Light") # get state and timestamp of light
+	#state_time = int(state_time)
+	state_time = 140502
 	on_time, duration = dataBase.getScheduleParameter("Light")
 	print("The light is currently recorded in state: : ", state)
 	print("The state was last pushed at: ", state_time)
