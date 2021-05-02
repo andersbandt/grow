@@ -13,7 +13,9 @@ import envControl.tests.pHtest as pHtest
 import envControl.tests.ECtest as ECtest
 
 from databases import *
+
 import scheduler.checkSchedule as checkScheduler
+import scheduler.updateSchedule as updateScheduler
 
 
 # main method to run to gather user input
@@ -248,7 +250,7 @@ def checkSchedule():
 
 # function to update the schedule
 def updateSchedule():
-	updateSchedule.updateSchedule()
+	updateScheduler.updateSchedule()
 
 
 def runTests():

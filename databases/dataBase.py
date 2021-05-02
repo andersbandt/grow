@@ -64,7 +64,7 @@ def updateScheduleParam(area, num, value):
 		return False
 
 	with conn:
-		cur.execute('UPDATE SCHEDULE SET WHERE area=?', (area,))
+		cur.execute('UPDATE SCHEDULE SET ?=? WHERE area=?', (param, value, area,))
 
 	conn.close()
 

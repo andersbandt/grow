@@ -17,13 +17,12 @@ def checkFans(cur_time):
 
 
 def checkLights(cur_time):
-	state_time, state = dataBase.getState("Light") # get state and timestamp of light
-	#state_time = int(state_time)
-	state_time = 140502
+  state_time, state = dataBase.getState("Light") # get state and timestamp of light
+	state_time = int(state_time)
 	on_time, duration = dataBase.getScheduleParameter("Light")
-	print("The light is currently recorded in state: : ", state)
+	print("The light is currently recorded in state: ", state)
 	print("The state was last pushed at: ", state_time)
-	timediff = cur_time - state_time # find time since last state was pushed
+	
 	off_time = on_time + duration # calculate the off time
 	if (off_time) > 240000:
  		off_time = (on_time + duration) - 240000
