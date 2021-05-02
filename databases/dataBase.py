@@ -39,7 +39,7 @@ def getScheduleParameter(area):
 	cur = conn.cursor()
 
 	with conn:
-		cur.execute('SELECT * FROM SCHEDULE WHERE AREA=?', (,area))
+		cur.execute('SELECT * FROM SCHEDULE WHERE AREA=?', (area,))
 		parameter = cur.fetchall()
 		print("I received this as a parameter")
 		print(parameter)
@@ -97,7 +97,7 @@ def updateState(area, timestamp, state):
 	with conn:
 		cur.execute('UPDATE * FROM STATES SET DATETIME=?, STATE=? WHERE area=?', (timestamp, state, area,))
 		parameter = cur.fetchall()
-		print("Updated ", area, " state from ", !state, "to ", state)
+		print("Updated ", area, "state to ", state)
 
 	conn.close()
 	return True 
