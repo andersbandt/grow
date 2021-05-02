@@ -19,7 +19,7 @@ def insertReading(sensor, value, date_string):
 
 # getParameter: returns certain calibration parameter
 # input: parameter - string representing parameter type
-def getParameter(parameter):
+def getCalibrationParameter(parameter):
 	conn = sqlite3.connect('databases/parameters.db')
 	cur = conn.cursor()
 
@@ -29,12 +29,27 @@ def getParameter(parameter):
 		print("I received this as a parameter")
 		print(parameter)
 	conn.close()
-	return 0, 140010
+	return parameter[0][2]
+
+# getSchedule: returns certain schedule parameter
+# input: area - control area
+# outputs: schedule parameter 1; schedule parameter 2
+def getScheduleParameter(area):
+	conn = sqlite3.connect('databases/parameters.db')
+	cur = conn.cursor()
+
+	with conn:
+		cur.execute('SELECT * FROM SCHEDULE WHERE AREA=?', (,area))
+		parameter = cur.fetchall()
+		print("I received this as a parameter")
+		print(parameter)
+	conn.close()
+	return parameter[0][2], parameter[0][3]
 
 
 # updateScheduleParam: updates a control area's parameters in the database
 # input: area - control area; num - parameter number; value - value in parameter
-# num should be 1 if changing parameter 1, 2 for parameter 2, and so on...
+# 	num should be 1 if changing parameter 1, 2 for parameter 2, and so on...
 # output: none
 def updateScheduleParam(area, num, value):
 	conn = sqlite3.connect('databases/parameters.db')
@@ -68,10 +83,27 @@ def getState(area):
 		print(parameter)
 
 	conn.close()
-	return parameter[0][2], parameter[0][3] # should return the state and the timestamp
+	return parameter[0][2], parameter[0][3] # should return the timestamp and the state
 
 
-# should print all the databases in a database
+# updateState: updates the state of a control area
+# input: area - control area; timestamp - timestamp the state was set at;
+# 	state - the new state of the control area
+# output: none
+def updateState(area, timestamp, state):
+	conn = sqlite3.connect('databases/runtimes.db')
+	cur = conn.cursor()
+
+	with conn:
+		cur.execute('UPDATE * FROM STATES SET DATETIME=?, STATE=? WHERE area=?', (timestamp, state, area,))
+		parameter = cur.fetchall()
+		print("Updated ", area, " state from ", !state, "to ", state)
+
+	conn.close()
+	return True 
+
+
+# should print all the tables in a database
 def tables_in_sqlite_db(conn):
 	cursor = conn.execute("SELECT name FROM sqlite_master WHERe type='table';")
 	tables = [
